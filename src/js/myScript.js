@@ -10,9 +10,10 @@
 */
 function reverseString() 
 {
-  let inputText = document.getElementById("userInput").value;
+  const inputText = document.getElementById("userInput").value;
 
-  let reversed = inputText.split("").reverse().join(""); 
+  const reversed = inputText.split("").reverse().join("");
+
   document.getElementById("output").innerHTML = reversed;
 }
 
@@ -26,9 +27,9 @@ function reverseString()
 */
 function isPalindrome() 
 {
-  input2Text = document.getElementById("userInput2").value;
+  const input2Text = document.getElementById("userInput2").value;
 
-  let reversed2 = input2Text.split("").reverse().join("");
+  const reversed2 = input2Text.split("").reverse().join("");
 
   if(input2Text == reversed2)
   {
@@ -47,9 +48,10 @@ function isPalindrome()
 */
 function reverseInt() 
 {
-  let input3Text = document.getElementById("userInput3").value;
+  const input3Text = document.getElementById("userInput3").value;
 
-  let reversed = input3Text.split("").reverse().join(""); 
+  const reversed = input3Text.split("").reverse().join(""); 
+
   document.getElementById("output3").innerHTML = reversed;
 }
 
@@ -57,19 +59,22 @@ function reverseInt()
 // Return a string with the first letter of every word capitalized
 // ex. capitalizeLetters('i love javascript') === 'I Love Javascript'
 /*
-  --Forklaring(challenge 4, session 1)--: Jeg tager værdien fra brugeren og gemmer det i input4Text. Så har jeg et regrex som leder efter alle ord, som ikke er mellemrum. 
-  Det gør den n gange og finder så alle de match, som der måtte være og gemmer dem i et array. Så kalder jeg en function med det som parameter,
+  --Forklaring(challenge 4, session 1)--: Jeg tager værdien fra brugeren og gemmer det i input4Text. 
+  Så har jeg et regrex som leder efter alle ord, som ikke er mellemrum. 
+  Det gør den n gange og finder så alle de match, som der måtte være og gemmer dem i et array. 
+  Så kalder jeg en function med det som parameter,
   functionen tager første character og laver det til et stort bogstav og laver så resten lille, 
-  det gør den med alle værdier i array'et og gemmer dem så i capitalizedFirstLetters. Herefter smider jeg det tilbage til brugeren.
+  det gør den med alle værdier i array'et og gemmer dem så i capitalizedFirstLetters.
+  Herefter smider jeg det tilbage til brugeren.
 */
 function capitalizeLetters() 
 {
-  let input4Text = document.getElementById("userInput4").value;
+  const input4Text = document.getElementById("userInput4").value;
 
-  let capitalizedFirstLetters = input4Text.replace(/\w\S*/g, function(txt){
+  const capitalizedFirstLetters = input4Text.replace(/\w\S*/g, txt => {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();   
-});
-document.getElementById("output4").innerHTML = capitalizedFirstLetters;
+  })
+  document.getElementById("output4").innerHTML = capitalizedFirstLetters;
 } 
 
 // CHALLENGE 5: MAX CHARACTER
@@ -88,13 +93,13 @@ document.getElementById("output4").innerHTML = capitalizedFirstLetters;
 
 function maxCharacter() 
 {
-  let userInput = document.getElementById("userInput5").value;
-  let userInputCounts = {};
+  const userInput = document.getElementById("userInput5").value;
+  const userInputCounts = {};
   let maxKey = "";
 
   for(let i = 0; i < userInput.length; i++)
   {
-    let key = userInput[i];
+    const key = userInput[i];
 
     if(!userInputCounts[key])
     {
@@ -165,17 +170,17 @@ function fizzBuzz()
 
 function longestWord() 
 {
-  let userInput = document.getElementById("userInput7").value;
+  const userInput = document.getElementById("userInput7").value;
 
-  let words = userInput.split(" ")
-  let big_word = ""
+  const words = userInput.split(" ");
+  let big_word = "";
 
-  words.forEach(function(word){
+  words.forEach( word => {
     if (word.length > big_word.length)
     {
-      big_word = word
-    };
-  });
+      big_word = word;
+    }
+  })
   return document.getElementById("output7").innerHTML = big_word;
 }
 
@@ -189,14 +194,14 @@ function longestWord()
 
 function chunkArray() 
 {
-  let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  let size = 3;
-
+  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const size = 3;
   const chunked_arr = [];
 
   for (let i = 0; i < array.length; i++) 
   {
     const last = chunked_arr[chunked_arr.length - 1];
+
     if (!last || last.length === size) 
     {
       chunked_arr.push([array[i]]);
@@ -215,8 +220,8 @@ function chunkArray()
 
 function flattenArray() 
 {
-  var one = [[1, 2], [3, 4], [5, 6], [7]];
-  var two = one.flat();
+  const one = [[1, 2], [3, 4], [5, 6], [7]];
+  const two = one.flat();
 
   console.log(two);
 }
