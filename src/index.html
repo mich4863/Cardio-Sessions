@@ -71,7 +71,7 @@
     <!-- CHALLENGE 6 --><br><br>
     <div class="form6">
       <form>
-          <Label><strong>FizzBuzz</strong></Label><br>
+          <Label><strong>FizzBuzz</strong></Label><br><br>
           <input type="button" value="Klik Her!" onclick="fizzBuzz()" />
       </form>
     </div>
@@ -92,7 +92,7 @@
     <!-- CHALLENGE 2 --><br><br>
     <div class="form8"> 
       <form>
-          <Label><strong>Chunk Array</strong></Label><br>
+          <Label><strong>Chunk Array</strong></Label><br><br>
           <input type="button" value="groupSize" onclick="chunkArray()" />
       </form>
     </div>
@@ -100,10 +100,40 @@
     <!-- CHALLENGE 3 --><br><br>
     <div class="form9">
         <form>
-            <Label><strong>Flatten Array</strong></Label><br>
+            <Label><strong>Flatten Array</strong></Label><br><br>
             <input type="button" value="Klik Her" onclick="flattenArray()" />
         </form>
     </div>
+
+    <!-- CHALLENGE 4 --><br><br>
+    <div class="form10"> 
+        <form>
+            <label><Strong>Anagram</Strong></label><br><br>
+            <label>Word 1: </label>
+            <input type="text" placeholder="Text:" id="wordOne" />
+            <br><br>
+            <label>Word 2: </label>
+            <input type="text" placeholder="Text:" id="wordTwo" />
+            <br><br>
+            <input type="button" value="Anagram" onclick="isAnagram()" />
+        </form>
+      
+        <br><label><strong>Are they Anagrams: </strong></label>
+        <span id="output10"></span>
+      </div>
+
+      <!-- CHALLENGE 5 --><br><br>
+    <div class="form11"> 
+            <form>
+                <label><Strong>Change letters</Strong></label><br><br>
+                <input type="text" placeholder="Text:" id="userInput11" />
+                <br><br>
+                <input type="button" value="Change" onclick="letterChanges()" />
+            </form>
+          
+            <br><label><strong>Changed letters: </strong></label>
+            <span id="output11"></span>
+          </div>
 
 
     <!--///// Script /////-->

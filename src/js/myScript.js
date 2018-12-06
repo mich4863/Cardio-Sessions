@@ -231,9 +231,22 @@ function flattenArray()
 // ex. 'elbow' === 'below'
 // ex. 'Dormitory' === 'dirty room##'
 
-function isAnagram(str1, str2) 
+function isAnagram() 
 {
+  const wordOne = document.getElementById("wordOne").value;
+  const wordTwo = document.getElementById("wordTwo").value;
 
+  const one = wordOne.replace(/[\s\W]/g, "").toLowerCase().split("").sort().join("");
+  const two = wordTwo.replace(/[\s\W]/g, "").toLowerCase().split("").sort().join("");
+
+  if(one === two)
+  {
+    return document.getElementById("output10").innerHTML = "Yes";
+  }
+  else
+  {
+    return document.getElementById("output10").innerHTML = "No";
+  }
 }
 
 // CHALLENGE 5: LETTER CHANGES
@@ -241,9 +254,49 @@ function isAnagram(str1, str2)
 // Z should turn to A
 // ex. 'hello there' === 'Ifmmp UIfsf'
 
-function letterChanges(str) 
+function letterChanges() 
 {
+  const word = document.getElementById("userInput11").value;
+
+  const characters = word.split("");
+  let result = "";
   
+  characters.forEach(c => { 
+    let testChar;
+    
+    if(c == "z" || c == "Z")
+    {
+      testChar = "A";
+    }
+    else
+    {
+      testChar = String.fromCharCode(c.charCodeAt(0) + 1);
+    }
+
+    if( testChar == "a" || testChar == "e" || testChar == "i" || testChar == "o" || testChar == "u" || testChar == "y")
+    {
+      testChar = testChar.toUpperCase();   
+    }
+    result += testChar;  
+  })
+
+  return document.getElementById("output11").innerHTML = result; 
 }
 
+// OBJECT CONSTRUCTOR
+/*
+function User(firstName, lastName)
+{
+  this.firstName = firstName;
+  this.lastName = lastName;
+
+  this.sayHi = function() {
+    alert("My name is: " + this.firstName + " " + this.lastName);
+  }
+}
+
+var user = new User("Jørgen", "Pedersen");
+alert(String(user.firstName + " " + user.lastName));
+*/
+//user.sayHi();
 
